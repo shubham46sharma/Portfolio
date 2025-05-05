@@ -57,7 +57,7 @@ Check out the projects section of my portfolio for a full list. Bring popcorn.
 
 Want to reach out? Maybe offer me a job? Or just tell me how awesome my portfolio is? Here’s how you can contact me:
 
-- **Email**: sshar150@ucr.edu
+- **Email**: shubham11.cs@gmail.com
 - **Phone**: (206) 532-9133
 - **LinkedIn**: [linkedin.com/in/shubham46sharma](https://www.linkedin.com/in/shubham46sharma/)
 - **GitHub**: [github.com/shubham46sharma](https://github.com/shubham46sharma)

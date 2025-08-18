@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                const offsetTop = targetSection.offsetTop - 100; // Account for fixed navbar + extra spacing
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateActiveNav() {
         let current = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop - 120; // Account for fixed navbar + extra spacing
             const sectionHeight = section.clientHeight;
             if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');

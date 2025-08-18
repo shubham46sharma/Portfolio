@@ -123,6 +123,7 @@ a:hover {
     padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    height: 80px; /* Ensure consistent navbar height */
 }
 
 .nav-logo a {
@@ -186,6 +187,7 @@ a:hover {
     background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
     position: relative;
     overflow: hidden;
+    padding-top: 80px; /* Account for fixed navbar */
 }
 
 .hero::before {
@@ -331,6 +333,7 @@ a:hover {
 /* Sections */
 .section {
     padding: 5rem 0;
+    padding-top: calc(5rem + 80px); /* Account for fixed navbar */
 }
 
 .section.bg-light {
@@ -1133,6 +1136,15 @@ a:hover {
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
+    }
+    
+    /* Fix navbar overlap on mobile */
+    .hero {
+        padding-top: 80px; /* Account for fixed navbar height */
+    }
+    
+    .section {
+        padding-top: 80px; /* Ensure sections don't get hidden behind navbar */
     }
     
     .nav-menu {

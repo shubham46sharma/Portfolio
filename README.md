@@ -1,51 +1,73 @@
-# Shubham Sharma - Software Engineer Portfolio
+# React + TypeScript + Vite
 
-A modern, responsive portfolio website showcasing my skills, projects, and professional experience in software engineering.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🚀 About Me
+Currently, two official plugins are available:
 
-I'm a passionate Software Engineer with a Master's in Computer Science from UC Riverside (GPA: 3.78/4.00). Currently working at Palm Beach Accountable Care Organization, I specialize in building scalable healthcare solutions and leading complex system migrations.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-**Key Achievements:**
-- 35% user engagement increase through real-time monitoring dashboards
-- 45% efficiency improvement in healthcare systems
-- Successfully migrated Angular v5→v17 and modernized .NET Core APIs
-- Increased Chrome Extension adoption by 150%
+## React Compiler
 
-## 💻 Technical Expertise
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-**Languages & Frameworks:** Java, Python, C#, JavaScript, TypeScript, Angular, React, Node.js, .NET Core
-**Cloud & DevOps:** Microsoft Azure, Docker, Git, CI/CD Pipelines
-**Databases:** SQL Server, MongoDB, PostgreSQL
-**Healthcare Technology:** HL7, ETL Pipelines, Chrome Extensions (Manifest v2/v3)
+## Expanding the ESLint configuration
 
-## 🏥 Current Focus
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-Specializing in healthcare technology and cloud engineering, with expertise in:
-- Real-time monitoring systems
-- ETL pipeline development
-- System migrations and upgrades
-- Process automation and optimization
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-## 📱 Portfolio Features
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-- **Modern Design:** Clean, professional aesthetic optimized for all devices
-- **Interactive Elements:** Smooth animations and hover effects
-- **Project Showcase:** Detailed project descriptions with live demos and GitHub links
-- **Resume Integration:** Direct download and online viewing capabilities
-- **Responsive Layout:** Optimized for desktop, tablet, and mobile
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-## 🌐 Live Portfolio
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-Visit my portfolio: [Portfolio Link]
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-## 📧 Contact
-
-- **Email:** shubham11.cs@gmail.com
-- **Phone:** (206) 532-9133
-- **LinkedIn:** [linkedin.com/in/shubham46sharma](https://linkedin.com/in/shubham46sharma)
-- **GitHub:** [github.com/shubham46sharma](https://github.com/shubham46sharma)
-
----
-
-*Building innovative solutions that make a difference in healthcare technology.*
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```

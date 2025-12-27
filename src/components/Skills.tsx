@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaJava, FaPython, FaJs, FaAngular, FaReact, FaNodeJs, FaDocker, FaGitAlt, FaCode } from 'react-icons/fa';
-import { SiTypescript, SiDotnet, SiMongodb } from 'react-icons/si';
+import { FaJava, FaPython, FaJs, FaAngular, FaReact, FaNodeJs, FaDocker, FaGitAlt, FaCode, FaFigma } from 'react-icons/fa';
+import { SiTypescript, SiDotnet, SiMongodb, SiSpringboot, SiPostgresql, SiKubernetes } from 'react-icons/si';
 import { DiMsqlServer } from "react-icons/di";
 
 const skills = [
@@ -11,12 +11,16 @@ const skills = [
   { name: 'TypeScript', icon: <SiTypescript />, color: '#3178c6' },
   { name: 'Angular', icon: <FaAngular />, color: '#dd0031' },
   { name: 'React', icon: <FaReact />, color: '#61dafb' },
+  { name: 'Spring Boot', icon: <SiSpringboot />, color: '#6db33f' },
   { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
   { name: 'Azure', icon: <FaCode />, color: '#0078d4' },
   { name: 'Docker', icon: <FaDocker />, color: '#2496ed' },
+  { name: 'Kubernetes', icon: <SiKubernetes />, color: '#326ce5' },
   { name: 'SQL Server', icon: <DiMsqlServer />, color: '#cc2927' },
+  { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
   { name: 'MongoDB', icon: <SiMongodb />, color: '#47a248' },
   { name: 'Git', icon: <FaGitAlt />, color: '#f05032' },
+  { name: 'Figma', icon: <FaFigma />, color: '#f24e1e' },
 ];
 
 const Skills = () => {

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaCheckCircle, FaPlay, FaEllipsisH, FaFileDownload } from 'react-icons/fa';
+import { FaCheckCircle, FaPlay, FaFileDownload } from 'react-icons/fa';
 import profilePic from '../assets/Shubham/05E8345D-7A65-4614-9CBF-E454E0C27589_1_105_c.jpeg';
 
 const Hero = () => {
@@ -61,10 +61,6 @@ const Hero = () => {
            <FaFileDownload size={16} />
            Resume
         </a>
-        
-        <button className="text-[var(--color-text-secondary)] hover:text-white transition-colors p-2">
-          <FaEllipsisH size={32} />
-        </button>
       </motion.div>
     </section>
   );
